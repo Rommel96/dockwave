@@ -29,21 +29,22 @@ Watch this repository if you want to know when that happens.
 
 ## Installing
 
-Dockwave is distributed outside the Mac App Store and is not signed with a
-paid Apple Developer ID, so macOS will refuse to open it on first launch and
-report that it is from an unidentified developer. This is expected, and the
-step to get past it is Apple's own documented one:
+Dockwave is not signed with a paid Apple Developer ID and is not notarized, so macOS will refuse to open it the first time. That is expected.
 
-1. Download the archive from the release and unpack it.
-2. Move `Dockwave.app` to `/Applications`.
-3. Open it once. macOS will refuse.
-4. Go to **System Settings → Privacy & Security**, scroll down, and choose
-   **Open Anyway**.
-5. Confirm again in the prompt that reappears.
+1. Download and unzip the archive.
+2. **Drag `Dockwave.app` to `/Applications` in Finder.** Do this in Finder, not from a terminal — a quarantined app moved with `mv` gets run by macOS from a read-only temporary copy instead of from where you put it.
+3. Open it. macOS blocks it with:
 
-You only do this once. Do not run commands that strip the quarantine
-attribute: that disables a protection that exists for good reasons, and it is
-not needed here.
+   > **"Dockwave" Not Opened**
+   > Apple could not verify "Dockwave" is free of malware that may harm your Mac or compromise your privacy.
+
+   The only buttons are **Move to Trash** and **Done**. Click **Done**. There is no "Open Anyway" here — it lives in System Settings, and it only appears after a launch has been blocked, so this step is required rather than redundant.
+4. Go to **System Settings → Privacy & Security** and scroll to the bottom. A line about Dockwave being blocked now appears, with an **Open Anyway** button. Click it.
+5. Confirm in the prompt that reappears.
+
+Once only.
+
+**Do not run commands that strip the quarantine attribute.** Removing it disables a protection that exists for good reasons, and nothing here needs it.
 
 ## Reporting problems
 
