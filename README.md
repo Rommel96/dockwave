@@ -12,18 +12,19 @@ Dockwave is not an open-source project — see [Terms](#terms) below.
 
 ## Status
 
-There is no public release yet. Packaging landed recently: the application now
-builds as a universal, signed `.app` bundle, but it has not been published.
-When the first release exists it will appear under
-[Releases](https://github.com/Rommel96/dockwave/releases), and the download
-page at `dockwave.dev` will point at it.
+`v0.1.0-beta.2` is available as a public prerelease for testing, not a stable
+release. It is published under [Releases](https://github.com/Rommel96/dockwave/releases),
+and the download page at [dockwave.dev](https://dockwave.dev/download/) points
+at the current release.
 
-Watch this repository if you want to know when that happens.
+Packaging is a universal, ad-hoc-signed `.app` bundle. Watch this repository
+if you want to know when another release is published.
 
 ## Requirements
 
-- macOS 11.0 (Big Sur) or later, on Apple Silicon or Intel. The release is a
-  universal binary, so a single download serves both.
+- Deployment target and bundle minimum: macOS 11.0.
+- Validated support: macOS 26.6.2 on Apple Silicon (arm64), with x86_64 execution under Rosetta also verified on that host.
+- macOS 11–25 are best-effort/unverified. Native Intel hardware has not been verified.
 - A PostgreSQL server to connect to. Nothing is bundled or provisioned for
   you.
 
