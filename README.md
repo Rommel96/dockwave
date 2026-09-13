@@ -70,5 +70,5 @@ The full terms ship inside the application at
 Dockwave incorporates third-party software under its own licences, chiefly MIT
 and Apache-2.0, alongside BSD-3-Clause, ISC, Zlib, MPL-2.0, Unicode-3.0 and
 others. Their required notices ship with the application at
-`Dockwave.app/Contents/Resources/THIRD_PARTY_NOTICES.md`, and will also be
-reachable from the download page.
+`Dockwave.app/Contents/Resources/THIRD_PARTY_NOTICES.md`, and are also
+available at [dockwave.dev/legal/THIRD_PARTY_NOTICES.md](https://dockwave.dev/legal/THIRD_PARTY_NOTICES.md).
