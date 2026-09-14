@@ -12,7 +12,7 @@ Dockwave is not an open-source project — see [Terms](#terms) below.
 
 ## Status
 
-`v0.1.0-beta.2` is available as a public prerelease for testing, not a stable
+`v0.1.0-beta.3` is available as a public prerelease for testing, not a stable
 release. It is published under [Releases](https://github.com/Rommel96/dockwave/releases),
 and the download page at [dockwave.dev](https://dockwave.dev/download/) points
 at the current release.
