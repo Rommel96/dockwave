@@ -19,8 +19,8 @@ Dockwave is a native macOS app—not Electron, a browser runtime, or a WebView.
 
 ## Status
 
-`v0.1.0-beta.5` is the latest public prerelease for testing, not a stable
-release. Download it from [Dockwave](https://dockwave.dev/download/) or
+`v0.1.0` is the current stable public release. Download it from
+[Dockwave](https://dockwave.dev/download/) or
 [GitHub Releases](https://github.com/Rommel96/dockwave/releases).
 
 ## Requirements
