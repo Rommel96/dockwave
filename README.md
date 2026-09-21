@@ -21,21 +21,23 @@ Dockwave is a native macOS app—not Electron, a browser runtime, or a WebView.
 
 `v0.1.0` is the current stable public release. Download it from
 [Dockwave](https://dockwave.dev/download/) or
-[GitHub Releases](https://github.com/Rommel96/dockwave/releases).
+[GitHub Releases](https://github.com/Rommel96/dockwave/releases/latest).
 
 ## Requirements
 
+- Available build: macOS universal binary.
 - Deployment target and bundle minimum: macOS 11.0.
 - Validated support: macOS 26.6.2 on Apple Silicon (arm64), with x86_64
   execution under Rosetta also verified on that host.
 - macOS 11–25 are best-effort/unverified. Native Intel hardware has not been
   verified.
+- Windows and Linux builds are not currently available.
 - A PostgreSQL server to connect to. Nothing is bundled or provisioned for
   you.
 
 ## Install
 
-1. Download and unzip the latest release.
+1. Download and unzip the latest stable release.
 2. Drag `Dockwave.app` to `/Applications` in Finder. Do not move it with a
    terminal command.
 3. Open Dockwave once. If macOS blocks it, go to **System Settings → Privacy &
