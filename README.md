@@ -14,12 +14,13 @@ Dockwave is a native macOS app—not Electron, a browser runtime, or a WebView.
 
 - Connect to PostgreSQL with saved connection profiles.
 - Run selected SQL or the full editor buffer.
+- Toggle SQL line comments and copy or cut whole lines in the editor.
 - Inspect read-only query results.
 - Export fresh results as CSV or JSON Lines.
 
 ## Status
 
-`v0.1.0` is the current stable public release. Download it from
+`v0.2.0` is the current stable public release. Download it from
 [Dockwave](https://dockwave.dev/download/) or
 [GitHub Releases](https://github.com/Rommel96/dockwave/releases/latest).
 
