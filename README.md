@@ -24,8 +24,8 @@ Dockwave is a native desktop app—not Electron, a browser runtime, or a WebView
 [Dockwave](https://dockwave.dev/download/) or
 [GitHub Releases](https://github.com/Rommel96/dockwave/releases/latest).
 
-A **Windows preview**, `v0.3.0-beta.1`, is available as a separate prerelease
-on [GitHub Releases](https://github.com/Rommel96/dockwave/releases/tag/v0.3.0-beta.1).
+A **Windows preview**, `v0.3.0-beta.3`, is available as a separate prerelease
+on [GitHub Releases](https://github.com/Rommel96/dockwave/releases/tag/v0.3.0-beta.3).
 It is not a stable release and does not include a macOS build.
 
 ## Requirements
@@ -63,8 +63,8 @@ attribute; it is a useful macOS security protection.
 
 ### Windows preview
 
-1. Download `Dockwave-0.3.0-beta.1-windows-x64.zip` from the
-   [prerelease](https://github.com/Rommel96/dockwave/releases/tag/v0.3.0-beta.1)
+1. Download `Dockwave-0.3.0-beta.3-windows-x64.zip` from the
+   [prerelease](https://github.com/Rommel96/dockwave/releases/tag/v0.3.0-beta.3)
    and unzip it into a folder of your choice.
 2. Run `dockwave.exe`. If SmartScreen shows "Windows protected your PC",
    choose **More info → Run anyway**.
