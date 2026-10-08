@@ -34,7 +34,7 @@ it from [Dockwave](https://dockwave.dev/download/) or
   - macOS 11–25 are best-effort/unverified. Native Intel hardware has not been
     verified.
 - Windows: portable x86_64 ZIP (`Dockwave-0.3.1-windows-x64.zip`), validated
-  on Windows 11 Pro (build 26200). Windows 10, other Windows 11 builds, and
+  on Windows 11 Pro (build 26300). Windows 10, other Windows 11 builds, and
   Windows on ARM are untested. The build is not code-signed, so SmartScreen
   warns on first launch.
 - Linux builds are not currently available.
