@@ -1,7 +1,7 @@
 # Dockwave
 
-Native PostgreSQL client for macOS and Windows, for connecting,
-running SQL, inspecting read-only results, and exporting CSV or JSON Lines.
+Native PostgreSQL client for macOS and Windows, with a Linux preview, for
+connecting, running SQL, inspecting read-only results, and exporting CSV or JSON Lines.
 
 [Website](https://dockwave.dev/) · [Download](https://dockwave.dev/download/) ·
 [Guide](https://dockwave.dev/guide/) · [Issues](https://github.com/Rommel96/dockwave/issues)
@@ -25,6 +25,10 @@ Dockwave is a native desktop app—not Electron, a browser runtime, or a WebView
 it from [Dockwave](https://dockwave.dev/download/) or
 [GitHub Releases](https://github.com/Rommel96/dockwave/releases/latest).
 
+A **Linux preview**, `v0.4.0-beta.1`, is available as a separate prerelease
+on [GitHub Releases](https://github.com/Rommel96/dockwave/releases/tag/v0.4.0-beta.1).
+It is not a stable release and contains only the Linux AppImage.
+
 ## Requirements
 
 - macOS: universal binary (`Dockwave-0.3.1-universal.zip`).
@@ -37,7 +41,10 @@ it from [Dockwave](https://dockwave.dev/download/) or
   on Windows 11 Pro (build 26300). Windows 10, other Windows 11 builds, and
   Windows on ARM are untested. The build is not code-signed, so SmartScreen
   warns on first launch.
-- Linux builds are not currently available.
+- Linux preview: x86_64 AppImage (`Dockwave-0.4.0-beta.1-linux-x86_64.AppImage`),
+  validated only on Omarchy with Hyprland (Wayland). It needs glibc 2.35 or
+  newer. Every other distribution and desktop, including X11 sessions, is
+  untested. The AppImage is not signed.
 - A PostgreSQL server to connect to. Nothing is bundled or provisioned for
   you.
 
@@ -70,6 +77,29 @@ The Windows build is portable: there is no installer or auto-update. To remove i
 delete the folder, `%APPDATA%\com.dockwave.desktop\`, and
 `%LOCALAPPDATA%\com.dockwave.desktop\`.
 
+### Linux preview
+
+1. Download `Dockwave-0.4.0-beta.1-linux-x86_64.AppImage` and its `.sha256`
+   file from the
+   [prerelease](https://github.com/Rommel96/dockwave/releases/tag/v0.4.0-beta.1).
+2. Verify and run it:
+
+   ```bash
+   sha256sum -c Dockwave-0.4.0-beta.1-linux-x86_64.AppImage.sha256
+   chmod +x Dockwave-0.4.0-beta.1-linux-x86_64.AppImage
+   ./Dockwave-0.4.0-beta.1-linux-x86_64.AppImage
+   ```
+
+The AppImage needs FUSE 3. Without it, run it with
+`APPIMAGE_EXTRACT_AND_RUN=1 ./Dockwave-0.4.0-beta.1-linux-x86_64.AppImage`.
+Passwords are stored through the Secret Service (verified with GNOME
+Keyring), so a Secret Service provider must be running.
+
+The AppImage is portable: there is no installer or auto-update. To remove it,
+delete the file, `~/.local/share/com.dockwave.desktop/`, and
+`~/.cache/com.dockwave.desktop/` (or the same folders under
+`$XDG_DATA_HOME` and `$XDG_CACHE_HOME` when set).
+
 ## Security and privacy
 
 - **Encrypted connections by default.** New connections use TLS (`require`).
@@ -77,7 +107,7 @@ delete the folder, `%APPDATA%\com.dockwave.desktop\`, and
   server without TLS, add `sslmode=disable`. Saved profiles keep the TLS mode
   you chose; switch them to `require` where your server supports it.
 - **Passwords stay in the system's secret store** (macOS Keychain, Windows
-  Credential Manager), never in Dockwave's files.
+  Credential Manager, the Secret Service on Linux), never in Dockwave's files.
 - **Your work stays on your device.** Query history, saved queries and open
   tabs are stored locally, unencrypted, in your user folders. Anything you
   type into SQL, including secrets, is saved as written. To let you inspect
@@ -86,7 +116,7 @@ delete the folder, `%APPDATA%\com.dockwave.desktop\`, and
 - **Spreadsheet-safe CSV.** The first CSV export asks whether to write
   formula-like values (starting with `=`, `+`, `-` or `@`) as text, so
   spreadsheets don't evaluate them. Change it anytime in General Settings
-  (`⌘ + ,` on macOS, `Ctrl + ,` on Windows); it also applies when copying
+  (`⌘ + ,` on macOS, `Ctrl + ,` on Windows and Linux); it also applies when copying
   from the result grid. JSON Lines exports never change.
 - **SSH host keys.** The first time you connect through an SSH host, compare
   its fingerprint with one from the server's administrator before accepting.
@@ -101,6 +131,10 @@ On Windows, include your Windows version and, if the app crashed, the
 contents of `%APPDATA%\com.dockwave.desktop\crash.log`. Passwords in it are
 redacted, but open it first and remove any SQL, host names, user names, or
 data values before attaching it.
+
+On Linux, include your distribution and version, desktop session (Wayland or
+X11), and, if the app crashed, the contents of
+`~/.local/share/com.dockwave.desktop/crash.log`, cleaned up the same way.
 
 ## License and notices
 
