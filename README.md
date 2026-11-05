@@ -1,7 +1,7 @@
 # Dockwave
 
-Native PostgreSQL client for macOS and Windows, with a Linux preview, for
-connecting, running SQL, inspecting read-only results, and exporting CSV or JSON Lines.
+Native PostgreSQL client for macOS, Windows, and Linux, for connecting,
+running SQL, editing eligible result cells, and exporting CSV or JSON Lines.
 
 [Website](https://dockwave.dev/) · [Download](https://dockwave.dev/download/) ·
 [Guide](https://dockwave.dev/guide/) · [Issues](https://github.com/Rommel96/dockwave/issues)
@@ -15,36 +15,32 @@ Dockwave is a native desktop app—not Electron, a browser runtime, or a WebView
 - Connect to PostgreSQL with saved connection profiles.
 - Run selected SQL or the full editor buffer.
 - Toggle SQL line comments and copy or cut whole lines in the editor.
-- Inspect read-only query results.
+- Inspect query results and edit eligible result cells, with staged changes
+  and a SQL preview before saving. Other results remain read-only, including
+  joined results.
 - Export fresh results as CSV or JSON Lines, with an optional
   spreadsheet-safe CSV mode.
 
 ## Status
 
-`v0.3.1` is the current stable public release, for macOS and Windows. Download
-it from [Dockwave](https://dockwave.dev/download/) or
-[GitHub Releases](https://github.com/Rommel96/dockwave/releases/latest).
-
-A **Linux preview**, `v0.4.0-beta.1`, is available as a separate prerelease
-on [GitHub Releases](https://github.com/Rommel96/dockwave/releases/tag/v0.4.0-beta.1).
-It is not a stable release and contains only the Linux AppImage.
+`v0.4.0` is the current stable public release for macOS, Windows, and Linux.
+Download it from [GitHub Releases](https://github.com/Rommel96/dockwave/releases/latest).
 
 ## Requirements
 
-- macOS: universal binary (`Dockwave-0.3.1-universal.zip`).
-  - Deployment target and bundle minimum: macOS 11.0.
-  - Validated support: macOS 26.6.2 on Apple Silicon (arm64), with x86_64
-    execution under Rosetta also verified on that host.
-  - macOS 11–25 are best-effort/unverified. Native Intel hardware has not been
-    verified.
-- Windows: portable x86_64 ZIP (`Dockwave-0.3.1-windows-x64.zip`), validated
-  on Windows 11 Pro (build 26300). Windows 10, other Windows 11 builds, and
-  Windows on ARM are untested. The build is not code-signed, so SmartScreen
-  warns on first launch.
-- Linux preview: x86_64 AppImage (`Dockwave-0.4.0-beta.1-linux-x86_64.AppImage`),
-  validated only on Omarchy with Hyprland (Wayland). It needs glibc 2.35 or
-  newer. Every other distribution and desktop, including X11 sessions, is
-  untested. The AppImage is not signed.
+- macOS: universal binary (`Dockwave-0.4.0-universal.zip`).
+  - Deployment target and bundle minimum: macOS 11.0; these are declarations,
+    not validated support for every version.
+  - Validated only on macOS 27.2 arm64. Other macOS 11–27 versions are
+    best-effort/unverified; x86_64 is unverified.
+- Windows: portable x86_64 ZIP (`Dockwave-0.4.0-windows-x64.zip`), validated
+  only on Windows 11 Pro build 26300 x64. Windows 10, other builds, and
+  Windows on ARM are untested. The build is unsigned, so SmartScreen warns
+  on first launch.
+- Linux: x86_64 AppImage (`Dockwave-0.4.0-linux-x86_64.AppImage`), validated
+  only on Omarchy 4.0.6 x86_64 with Hyprland on Wayland and glibc 2.35 or
+  newer. Other distributions, desktops, and sessions are untested. The
+  AppImage is unsigned.
 - A PostgreSQL server to connect to. Nothing is bundled or provisioned for
   you.
 
@@ -61,13 +57,13 @@ It is not a stable release and contains only the Linux AppImage.
 See the full [installation guide](https://dockwave.dev/guide/installation/) for
 the first-launch flow.
 
-Dockwave is currently not signed with a paid Apple Developer ID and is not
+Dockwave is ad-hoc signed, not signed with a paid Apple Developer ID, and not
 notarized, so macOS may block the first launch. Do not strip the quarantine
 attribute; it is a useful macOS security protection.
 
 ### Windows
 
-1. Download `Dockwave-0.3.1-windows-x64.zip` from the
+1. Download `Dockwave-0.4.0-windows-x64.zip` from the
    [latest release](https://github.com/Rommel96/dockwave/releases/latest)
    and unzip it into a folder of your choice.
 2. Run `dockwave.exe`. If SmartScreen shows "Windows protected your PC",
@@ -77,21 +73,21 @@ The Windows build is portable: there is no installer or auto-update. To remove i
 delete the folder, `%APPDATA%\com.dockwave.desktop\`, and
 `%LOCALAPPDATA%\com.dockwave.desktop\`.
 
-### Linux preview
+### Linux
 
-1. Download `Dockwave-0.4.0-beta.1-linux-x86_64.AppImage` and its `.sha256`
+1. Download `Dockwave-0.4.0-linux-x86_64.AppImage` and its `.sha256`
    file from the
-   [prerelease](https://github.com/Rommel96/dockwave/releases/tag/v0.4.0-beta.1).
+   [latest release](https://github.com/Rommel96/dockwave/releases/latest).
 2. Verify and run it:
 
    ```bash
-   sha256sum -c Dockwave-0.4.0-beta.1-linux-x86_64.AppImage.sha256
-   chmod +x Dockwave-0.4.0-beta.1-linux-x86_64.AppImage
-   ./Dockwave-0.4.0-beta.1-linux-x86_64.AppImage
+   sha256sum -c Dockwave-0.4.0-linux-x86_64.AppImage.sha256
+   chmod +x Dockwave-0.4.0-linux-x86_64.AppImage
+   ./Dockwave-0.4.0-linux-x86_64.AppImage
    ```
 
 The AppImage needs FUSE 3. Without it, run it with
-`APPIMAGE_EXTRACT_AND_RUN=1 ./Dockwave-0.4.0-beta.1-linux-x86_64.AppImage`.
+`APPIMAGE_EXTRACT_AND_RUN=1 ./Dockwave-0.4.0-linux-x86_64.AppImage`.
 Passwords are stored through the Secret Service (verified with GNOME
 Keyring), so a Secret Service provider must be running.
 
